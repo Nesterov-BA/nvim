@@ -1,1 +1,6 @@
 vim.cmd("iab -> <Bslash>rightarrow")
+vim.cmd("iab <- <Bslash>leftarrow")
+vim.cmd("iab => <Bslash>Rightarrow")
+vim.cmd("iab <= <Bslash>Leftarrow")
+vim.cmd("iab <=> <Bslash>Leftrightarrow")
+vim.cmd("iab <-> <Bslash>leftrightarrow")
