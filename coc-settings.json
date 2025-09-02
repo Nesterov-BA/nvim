@@ -1,4 +1,10 @@
 {
   "clangd.path": "/usr/bin/clangd",  
-  "clangd.arguments": ["-background-index"]  
+  "clangd.arguments": ["-background-index"] 
+  "languageserver": {
+        "tex":{
+        "command": "vimtex"
+        "filetypes": ["tex"]
+    }
+}
 }
