@@ -11,6 +11,8 @@ vim.keymap.set({ "n", "v" }, "g$", "$")
 vim.keymap.set({ "n", "v" }, "$", "g$")
 vim.keymap.set({ "n", "v" }, "g0", "0")
 vim.keymap.set({ "n", "v" }, "0", "g0")
+-- save file like in doom EMACS
+vim.keymap.set({ "n" }, "<leader>fs", ":w<CR>")
 -- Tab to navigate and select autocomplete
 local keyset = vim.keymap.set
 -- Autocomplete
@@ -18,7 +20,6 @@ function _G.check_back_space()
   local col = vim.fn.col(".") - 1
   return col == 0 or vim.fn.getline("."):sub(col, col):match("%s") ~= nil
 end
-
 -- Visual mode indenting
 vim.keymap.set("v", "<", "<gv", { desc = "Indent left and reselect line" })
 vim.keymap.set("v", ">", ">gv", { desc = "Indent right and reselect line" })

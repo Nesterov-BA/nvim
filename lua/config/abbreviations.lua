@@ -4,3 +4,42 @@ vim.cmd("iab => <Bslash>Rightarrow")
 vim.cmd("iab <= <Bslash>Leftarrow")
 vim.cmd("iab <=> <Bslash>Leftrightarrow")
 vim.cmd("iab <-> <Bslash>leftrightarrow")
+--Greek letters
+vim.cmd([[
+  iab co \colon
+  iab al \alpha
+  iab Al \mathcal{A}
+  iab be \beta
+  iab ga \gamma
+  iab Ga \Gamma
+  iab de \delta
+  iab De \Delta
+  iab ep \varepsilon
+  iab ze \zeta
+  iab et \eta
+  iab th \theta
+  iab Th \Theta
+  iab io \iota
+  iab ka \varkappa
+  iab la \lambda
+  iab La \Lambda
+  iab mu \mu
+  iab nu \nu
+  iab xi \xi
+  iab Xi \Xi
+  iab pi \pi
+  iab Pi \Pi
+  iab rh \rho
+  iab si \sigma
+  iab Si \Sigma
+  iab ta \tau
+  iab up \upsilon
+  iab Up \Upsilon
+  iab ph \varphi
+  iab Ph \Phi
+  iab ch \chi
+  iab ps \psi
+  iab Ps \Psi
+  iab om \omega
+  iab Om \Omega
+]])

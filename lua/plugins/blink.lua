@@ -14,6 +14,7 @@ return {
     sources = {
       -- Remove 'buffer' if you don't want text completions, by default it's only enabled when LSP returns no items
       default = { "lsp", "path", "snippets" },
+      buffer = false,
     },
     -- in your blink configuration
     keymap = {
@@ -30,7 +31,7 @@ return {
       },
       -- Navigate to the previous suggestion or cancel completion if currently on the first one.
       ["<S-Tab>"] = { "insert_prev" },
-      ["<CR>"] = { "select_and_accept" },
+      ["<CR>"] = { "select_and_accept", "fallback" },
     },
   },
 }

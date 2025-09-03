@@ -7,11 +7,23 @@ ls.add_snippets("tex", {
   s({
     trig = "mi",
     name = "Insert inline math",
-    dscr = "Expands to dollars",
+    dscr = "Expands to braces",
   }, {
-    t("$ "),
+    t("\\( "),
     i(1),
-    t(" $"),
+    t(" \\)"),
+    i(0),
+  }),
+})
+ls.add_snippets("tex", {
+  s({
+    trig = "mc",
+    name = "Insert centered math",
+    dscr = "Expands to square brackets",
+  }, {
+    t("\\[ "),
+    i(1),
+    t(" \\]"),
     i(0),
   }),
 })
