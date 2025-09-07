@@ -13,10 +13,17 @@ vim.g.vimtex_delim_toggle_mod_list = {
   { "\\left", "\\right" },
   { "\\big", "\\big" },
 }
--- For init.lua
+vim.g.vimtex_env_toggle_math_map = {
+  ["$"] = "\\(",
+  ["$$"] = "\\[",
+  ["\\("] = "\\[",
+  ["\\["] = "\\(",
+} -- For init.lua
 vim.g.vimtex_syntax_enabled = 1
 vim.g.vimtex_complete_enabled = 1
 vim.g.vimtex_complete_close_braces = 1
+vim.g.vimtex_format_enabled = 1
+
 vim.g.vimtex_syntax_conceal = {
   accents = 1,
   ligatures = 1,

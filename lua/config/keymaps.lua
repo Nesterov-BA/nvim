@@ -13,6 +13,10 @@ vim.keymap.set({ "n", "v" }, "g0", "0")
 vim.keymap.set({ "n", "v" }, "0", "g0")
 -- save file like in doom EMACS
 vim.keymap.set({ "n" }, "<leader>fs", ":w<CR>")
+-- vimtex nice things
+vim.keymap.set({ "n" }, "<leader>rd", "<plug>(vimtex-delim-toggle-modifier)")
+vim.keymap.set({ "n" }, "<leader>rm", "<plug>(vimtex-env-toggle-math)")
+vim.keymap.set({ "n" }, "<leader>re", "<plug>(vimtex-env-change)")
 -- Tab to navigate and select autocomplete
 local keyset = vim.keymap.set
 -- Autocomplete

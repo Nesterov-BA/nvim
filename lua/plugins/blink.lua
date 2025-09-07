@@ -8,13 +8,32 @@ local has_words_before = function()
 end
 
 return {
-  -- Disable blink.cmp
   "saghen/blink.cmp", -- or whatever the plugin's repo name is
+  dependencies = {
+    "micangl/cmp-vimtex",
+    dependencies = {
+      {
+        "saghen/blink.compat",
+        version = "*",
+        lazy = true,
+        opts = {},
+      },
+    },
+  },
   opts = {
+    completion = { list = { selection = { preselect = false, auto_insert = false } } },
     sources = {
       -- Remove 'buffer' if you don't want text completions, by default it's only enabled when LSP returns no items
-      default = { "lsp", "path", "snippets" },
+      default = { "vimtex", "lsp", "path", "snippets" },
       buffer = false,
+      providers = {
+        vimtex = {
+          name = "vimtex",
+          min_keyword_length = 2,
+          module = "blink.compat.source",
+          score_offset = 80,
+        },
+      },
     },
     -- in your blink configuration
     keymap = {
@@ -24,14 +43,23 @@ return {
       ["<Tab>"] = {
         function(cmp)
           if has_words_before() then
-            return cmp.insert_next()
+            return cmp.select_next()
           end
         end,
         "fallback",
       },
       -- Navigate to the previous suggestion or cancel completion if currently on the first one.
-      ["<S-Tab>"] = { "insert_prev" },
-      ["<CR>"] = { "select_and_accept", "fallback" },
+      ["<S-Tab>"] = { "select_prev" },
+      ["<CR>"] = {
+        function(cmp)
+          if cmp.snippet_active() then
+            return cmp.accept()
+          else
+            return cmp.select_and_accept()
+          end
+        end,
+        "fallback",
+      },
     },
   },
 }
