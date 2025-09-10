@@ -19,11 +19,12 @@ ls.add_snippets("tex", {
   s({
     trig = "mc",
     name = "Insert centered math",
-    dscr = "Expands to square brackets",
+    dscr = "Expands to square brackets on separate lines",
   }, {
-    t("\\[ "),
+    t("\\["),
+    t({ "", "" }), -- Creates a new line
     i(1),
-    t(" \\]"),
+    t({ "", "\\]" }),
     i(0),
   }),
 })
