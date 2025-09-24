@@ -42,5 +42,5 @@ vim.cmd([[
   iab Ps \Psi
   iab om \omega
   iab Om \Omega
-  iab cd \Cdot
+  iab cd \cdot
 ]])

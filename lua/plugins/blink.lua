@@ -25,7 +25,6 @@ return {
     sources = {
       -- Remove 'buffer' if you don't want text completions, by default it's only enabled when LSP returns no items
       default = { "vimtex", "lsp", "path", "snippets" },
-      buffer = false,
       providers = {
         vimtex = {
           name = "vimtex",
