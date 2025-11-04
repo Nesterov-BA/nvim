@@ -10,7 +10,7 @@ return {
     end
 
     local cmp = require("cmp")
-
+    local auto_select = false
     opts.mapping = vim.tbl_extend("force", opts.mapping, {
       ["<Tab>"] = cmp.mapping(function(fallback)
         if cmp.visible() then
