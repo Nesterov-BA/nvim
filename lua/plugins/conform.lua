@@ -9,6 +9,7 @@ return {
         markdown = { "prettier, markdown-toc" },
         xml = { "xmlformatter" },
         json = { "prettier" },
+        toml = { "pyproject-fmt" },
       },
     },
   },
