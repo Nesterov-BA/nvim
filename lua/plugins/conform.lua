@@ -11,6 +11,7 @@ return {
         json = { "prettier" },
         toml = { "pyproject-fmt" },
         html = { "prettier" },
+        javascript = { "prettier" },
       },
     },
   },
