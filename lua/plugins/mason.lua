@@ -7,6 +7,7 @@ return {
       "shfmt",
       "flake8",
       "clang-format", -- cpp
+      "clangd",
       "isort", -- python
       "black", -- python
       "autopep8", -- python
