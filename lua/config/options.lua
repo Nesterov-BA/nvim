@@ -7,6 +7,7 @@ vim.opt.wrap = true
 vim.opt.linebreak = true -- Break at word boundaries (instead of mid-word)
 vim.opt.showbreak = "↪ " -- Optional: Prefix for wrapped lines (requires a patched font)
 vim.opt.breakindent = true
+vim.opt.clipboard = "unnamedplus"
 -- TEX config
 -- vimtex configuration
 vim.g.vimtex_delim_toggle_mod_list = {
