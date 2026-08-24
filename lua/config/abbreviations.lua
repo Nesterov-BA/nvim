@@ -1,46 +1,55 @@
-vim.cmd("iab -> <Bslash>rightarrow")
-vim.cmd("iab <- <Bslash>leftarrow")
-vim.cmd("iab => <Bslash>Rightarrow")
-vim.cmd("iab <= <Bslash>Leftarrow")
-vim.cmd("iab <=> <Bslash>Leftrightarrow")
-vim.cmd("iab <-> <Bslash>leftrightarrow")
---Greek letters
-vim.cmd([[
-  iab co \colon
-  iab al \alpha
-  iab Al \mathcal{A}
-  iab be \beta
-  iab ga \gamma
-  iab Ga \Gamma
-  iab de \delta
-  iab De \Delta
-  iab ep \varepsilon
-  iab ze \zeta
-  iab et \eta
-  iab th \theta
-  iab Th \Theta
-  iab io \iota
-  iab ka \varkappa
-  iab la \lambda
-  iab La \Lambda
-  iab mu \mu
-  iab nu \nu
-  iab xi \xi
-  iab Xi \Xi
-  iab pi \pi
-  iab Pi \Pi
-  iab rh \rho
-  iab si \sigma
-  iab Si \Sigma
-  iab ta \tau
-  iab up \upsilon
-  iab Up \Upsilon
-  iab ph \varphi
-  iab Ph \Phi
-  iab ch \chi
-  iab ps \psi
-  iab Ps \Psi
-  iab om \omega
-  iab Om \Omega
-  iab cd \cdot
-]])
+-- function that defines buffer‑local abbreviations
+local function set_tex_abbreviations()
+  vim.cmd([[
+    iab <buffer> -> \rightarrow
+    iab <buffer> <- \leftarrow
+    iab <buffer> => \Rightarrow
+    iab <buffer> <= \Leftarrow
+    iab <buffer> <=> \Leftrightarrow
+    iab <buffer> <-> \leftrightarrow
+    " Greek and others
+    iab <buffer> co \colon
+    iab <buffer> al \alpha
+    iab <buffer> Al \mathcal{A}
+    iab <buffer> be \beta
+    iab <buffer> ga \gamma
+    iab <buffer> Ga \Gamma
+    iab <buffer> de \delta
+    iab <buffer> De \Delta
+    iab <buffer> ep \varepsilon
+    iab <buffer> ze \zeta
+    iab <buffer> et \eta
+    iab <buffer> th \theta
+    iab <buffer> Th \Theta
+    iab <buffer> io \iota
+    iab <buffer> ka \varkappa
+    iab <buffer> la \lambda
+    iab <buffer> La \Lambda
+    iab <buffer> mu \mu
+    iab <buffer> nu \nu
+    iab <buffer> xi \xi
+    iab <buffer> Xi \Xi
+    iab <buffer> pi \pi
+    iab <buffer> Pi \Pi
+    iab <buffer> rh \rho
+    iab <buffer> si \sigma
+    iab <buffer> Si \Sigma
+    iab <buffer> ta \tau
+    iab <buffer> up \upsilon
+    iab <buffer> Up \Upsilon
+    iab <buffer> ph \varphi
+    iab <buffer> Ph \Phi
+    iab <buffer> ch \chi
+    iab <buffer> ps \psi
+    iab <buffer> Ps \Psi
+    iab <buffer> om \omega
+    iab <buffer> Om \Omega
+    iab <buffer> cd \cdot
+  ]])
+end
+
+-- Trigger the function when a tex buffer is entered
+vim.api.nvim_create_autocmd("FileType", {
+  pattern = "tex",
+  callback = set_tex_abbreviations,
+})

@@ -2,18 +2,36 @@ return {
   "mason-org/mason.nvim",
   opts = {
     ensure_installed = {
-      "stylua",
-      "shellcheck",
-      "shfmt",
-      "flake8",
-      "clang-format", -- cpp
+      "bash-language-server",
       "clangd",
-      "isort", -- python
-      "black", -- python
-      "autopep8", -- python
-      "prettier", -- markdown & json
-      "markdown-toc", -- markdown
+      "cmakelang",
+      "cmakelint",
+      "cpptools",
+      "djlint",
+      "flake8",
+      "html-lsp",
+      "json-lsp",
+      "lua-language-server",
+      "marksman",
+      "neocmakelsp",
+      "pyright",
+      "ruff",
+      "shellcheck",
+      "sqlfluff",
+      "stylua",
+      "tree-sitter-cli",
+      -- Formatters
+      "autopep8",
+      "black",
+      "clang-format",
+      "isort",
+      "prettier",
+      "shfmt",
       "xmlformatter",
+      -- Linters / others
+      "glsl_analyzer",
+      "markdown-toc",
+      "markdownlint-cli2",
     },
   },
 }

@@ -27,9 +27,3 @@ end
 -- Visual mode indenting
 vim.keymap.set("v", "<", "<gv", { desc = "Indent left and reselect line" })
 vim.keymap.set("v", ">", ">gv", { desc = "Indent right and reselect line" })
--- visual mode bracketing
-vim.keymap.set("v", "(", "c(<ESC>pa)")
-vim.keymap.set("v", "[", "c[<ESC>pa]")
-vim.keymap.set("v", "{", "c{<ESC>pa}")
-vim.keymap.set("v", '"', 'c"<ESC>pa"')
-vim.keymap.set("v", "'", "c'<ESC>pa'")

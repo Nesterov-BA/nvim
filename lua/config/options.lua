@@ -52,3 +52,10 @@ vim.o.shiftwidth = 4 -- Number of spaces inserted when indenting
 vim.opt.iskeyword:append("-") -- set hyphen to be part of the word
 
 vim.opt.winborder = "rounded"
+vim.filetype.add({
+  extension = {
+    -- Key = extension, Value = filetype
+    fs = "glsl",
+    vs = "glsl",
+  },
+})
