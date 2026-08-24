@@ -59,3 +59,4 @@ vim.filetype.add({
     vs = "glsl",
   },
 })
+vim.opt.clipboard = "unnamedplus"
