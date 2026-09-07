@@ -27,3 +27,43 @@ end
 -- Visual mode indenting
 vim.keymap.set("v", "<", "<gv", { desc = "Indent left and reselect line" })
 vim.keymap.set("v", ">", ">gv", { desc = "Indent right and reselect line" })
+
+-- Press F5 to run the current file with python3
+-- Function to run current file based on filetype
+local function run_file()
+  local ft = vim.bo.filetype
+  local cmd = ""
+
+  if ft == "python" then
+    cmd = "python %"
+  elseif ft == "javascript" or ft == "typescript" then
+    cmd = "node %"
+  elseif ft == "go" then
+    cmd = "go run %"
+  elseif ft == "rust" then
+    cmd = "cargo run"
+  elseif ft == "sh" or ft == "bash" then
+    cmd = "bash %"
+  elseif ft == "lua" then
+    cmd = "lua %"
+  elseif ft == "ruby" then
+    cmd = "ruby %"
+  elseif ft == "php" then
+    cmd = "php %"
+  elseif ft == "java" then
+    -- Java requires compilation first
+    cmd = "javac % && java %:r"
+  elseif ft == "c" or ft == "cpp" then
+    -- C/C++ compile and run
+    cmd = "make && ./a.out"
+  else
+    vim.notify("No runner configured for filetype: " .. ft, vim.log.levels.WARN)
+    return
+  end
+
+  vim.cmd("w") -- Save the file
+  vim.cmd("!" .. cmd) -- Run the command
+end
+
+-- Map F5 to the function
+vim.keymap.set("n", "<F5>", run_file, { desc = "Run current file based on filetype" })
