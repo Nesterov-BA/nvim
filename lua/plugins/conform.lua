@@ -6,7 +6,7 @@ return {
       formatters_by_ft = {
         cpp = { "clang-format" },
         tex = { "tex-fmt" },
-        python = { "isort", "black", "autopep8" },
+        python = { "isort", "black" },
         markdown = { "prettier", "markdown-toc" },
         xml = { "xmlformatter" },
         json = { "prettier" },

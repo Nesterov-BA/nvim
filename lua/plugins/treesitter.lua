@@ -27,7 +27,6 @@ return {
         "markdown",
         "markdown_inline",
         "ninja",
-        "norg", -- added
         "printf",
         "python",
         "query",
